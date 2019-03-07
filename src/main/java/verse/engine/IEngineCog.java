@@ -18,7 +18,7 @@ public interface IEngineCog {
     public void initTurn(Object... args);
         
     /**
-     * Turns the EngineCog ONCE. In other words, runs one cycle of what the EngineComponent
+     * Turns the EngineCog ONCE. In other words, runs one cycle of what the EngineCog
      * is designed to do.
      */
     public void turnCog();
