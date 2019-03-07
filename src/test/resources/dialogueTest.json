@@ -1,0 +1,4 @@
+{ "ScriptName": "Test Script",
+  "Script": [ {"Speaker": "Faiz", "Dialogue": "Hi there, I'm Faiz!"},
+              {"Speaker": "Another Person", "Dialogue": Hi Faiz, I have no name and no purpose. Could you help me?"},
+              {"Speaker": "Faiz", "Dialogue": Nope, your outta luck. Peace."} ] }

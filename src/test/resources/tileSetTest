@@ -1,0 +1,2 @@
+{"TileSet": "Dungeon Set", "ImagePath": "src/test/resources/DungeonTileSet.png", "TileWidth": 32, "TileHeight": 32, "Frame":[0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1] }
+{"TileSet": "Grass Set", "ImagePath": "src/test/resources/GrassTileSet.png", "TileWidth": 32, "TileHeight": 32, "Frame":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0] }
