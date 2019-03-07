@@ -2,9 +2,9 @@ package verse.engine.updatable;
 
 /**
  * To be Updatable the given object has to be able to update itself in some way. For example,
- * a Player Object could be Updatable since it could move when updated.
+ * a Player Object could be Updatable by moving when updated.
  * 
- * @author Faiz Gull Chaudhry
+ * @author Faiz Chaudhry
  */
 public interface IUpdatable {
 

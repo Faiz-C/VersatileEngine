@@ -15,12 +15,12 @@ import verse.engine.utils.SpriteSheet;
 import verse.engine.utils.SpriteSheetHandler;
 
 /**
- * A helper class to make building in game tilesets easier. A TileSet is a collection of Tiles
+ * A helper class to make building in game tile sets easier. A TileSet is a collection of Tiles
  * of the SAME dimensions and allows for the user to pick out of them and place them into a TileMap.
- * This utilizes an image and frame setup where the image is the all the tiles together and
- * the frame dictates which tiles (in order) are solid.
+ * This utilizes an image and frame setup where the image is all the tiles together and the frame 
+ * dictates which tiles (in order) are solid.
  * 
- * @author Faiz Gull Chaudhry
+ * @author Faiz Chaudhry
  */
 public class TileSet {
 
@@ -34,7 +34,7 @@ public class TileSet {
     }
         
     /**
-     * Using the frame and the imagePath given this will load the tile set image and extract each
+     * Using the frame and the image path given this will load the tile set image and extract each
      * individual tile image, making Tiles out of them and storing each.
      * 
      * @param imagePath -> The path to the image of the tile set

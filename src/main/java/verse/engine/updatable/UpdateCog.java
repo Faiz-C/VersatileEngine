@@ -12,7 +12,7 @@ import verse.engine.IEngineCog;
  * game which need to be updated during the game. More specifically it
  * performs its part inside the game loop itself.
  * 
- * @author Faiz Gull Chaudhry
+ * @author Faiz Chaudhry
  */
 public class UpdateCog implements IEngineCog{
 

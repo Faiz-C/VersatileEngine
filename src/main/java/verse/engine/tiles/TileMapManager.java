@@ -13,6 +13,13 @@ import org.json.simple.parser.JSONParser;
 
 import verse.engine.utils.ErrorHandler;
 
+/**
+ * A manager which helps to contain all TileMaps and TileSets the game need in one place. It loads all TileSets based a single text file containing 
+ * many JSONs with different TileSet information (see testing examples). A similar idea is done to load all the TileMaps for a game (see testing 
+ * examples). This manager allows for ease of access to all TileMaps needed for a game via a simple lookup. 
+ *
+ * @author Faiz Chaudhry
+ */
 public class TileMapManager {
 
     private Map<String, TileSet> tileSets;
@@ -27,14 +34,14 @@ public class TileMapManager {
         
     /**
      * Using the given path, this method will fetch and load ALL tile sets within the given file.
+     *
      * @param jsonPath -> The path to the json object file containing information on all the tile sets for the game
      */
     private void loadTiles(String jsonPath) {
         try {
             File file = new File(jsonPath);
                         
-            // Check if file exists and is readable
-                        
+            // Check if file exists and is readable                  
             if (!file.exists() || !file.canRead()) {
                 ErrorHandler.raiseError("File either doesn't exist or cannot be read from", null);
                 return;
@@ -64,6 +71,7 @@ public class TileMapManager {
         
     /**
      * Using the given path, this method will fetch and load ALL TileMaps within the given file.
+     *
      * @param jsonPath -> The path to the json object file containing information on all the tile sets for the game
      */
     private void loadTileMaps(String jsonPath) {
@@ -86,8 +94,12 @@ public class TileMapManager {
                 JSONObject jObject = (JSONObject) obj;
                                 
                 // Fetch information for each map
-                String mapName = (String) jObject.get("MapName"), mapPath = (String) jObject.get("MapPath"), tileSetName = (String) jObject.get("TileSet");
-                int mapWidth = ((Long) jObject.get("MapWidth")).intValue(), mapHeight = ((Long) jObject.get("MapHeight")).intValue();
+                String mapName = (String) jObject.get("MapName"),
+                       mapPath = (String) jObject.get("MapPath"),
+                       tileSetName = (String) jObject.get("TileSet");
+
+                int mapWidth = ((Long) jObject.get("MapWidth")).intValue(),
+                    mapHeight = ((Long) jObject.get("MapHeight")).intValue();
                            
                 this.gameMaps.put(mapName, new TileMap(this.getTileSet(tileSetName), mapPath, mapWidth, mapHeight));
                                                         

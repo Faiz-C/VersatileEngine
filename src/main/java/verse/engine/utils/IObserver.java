@@ -1,7 +1,7 @@
 package verse.engine.utils;
 
 /**
- * Classic Implementation of the Observer/Observable Design
+ * Part of the classic implementation of the Observer/Observable Design. This is a slightly adjusted Observer interface.
  * 
  * @author Faiz Gull Chaudhry
  */

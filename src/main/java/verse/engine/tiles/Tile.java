@@ -11,7 +11,7 @@ import verse.engine.physics.CollidableObject;
  * it can collide with other CollidableObjects, or not meaning it can be passed through (for example,
  * a background tile).
  * 
- * @author Faiz Gull Chaudhry
+ * @author Faiz Chaudhry
  */
 public class Tile extends CollidableObject implements IDrawable{
 

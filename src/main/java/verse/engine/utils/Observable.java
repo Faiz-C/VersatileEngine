@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * An Implementation of the classic Observer/Observable pattern
+ * Part of an implementation of the classic Observer/Observable pattern. This is the 
+ * classical or typical Observable Class.
  * 
  * @author Faiz Gull Chaudhry	
  */

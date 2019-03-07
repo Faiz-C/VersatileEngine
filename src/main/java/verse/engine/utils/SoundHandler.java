@@ -8,7 +8,7 @@ import verse.engine.sound.GameSound;
  * The purpose of a SoundHandler is to maintain and manage one of the many sounds a game can have. These sounds include 
  * BGM (Background Music), sound effects, voice dialogue, etc...
  * 
- * @author Faiz Gull Chaudhry
+ * @author Faiz Chaudhry
  */
 public class SoundHandler {
 
@@ -20,8 +20,7 @@ public class SoundHandler {
     }
         
     /**
-     * 
-     * @return - The GameSound that this SoundHandler is dealing with
+     * @return The GameSound that this SoundHandler is dealing with
      */
     public GameSound getSound() {
         return this.sound;
@@ -29,7 +28,8 @@ public class SoundHandler {
         
     /**
      * Plays the sound that the SoundHandler was made to handle. Sound is played in a separate thread so that
-     * it doesn't cause problems with the current thread.
+     * it doesn't interrupt the current thread.
+     *
      * @throws SoundNotFinishedException 
      */
     public void playSound() throws SoundNotFinishedException {
@@ -44,7 +44,8 @@ public class SoundHandler {
     }
         
     /**
-     * Stops the sound that is being played in a separate thread by the SoundHandler. 
+     * Stops the sound that is being played in the separate thread by the SoundHandler. 
+     *
      * @throws NoSoundToStopException 
      */
     public void stopSound() throws NoSoundToStopException {

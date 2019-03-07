@@ -13,9 +13,9 @@ import verse.engine.utils.ErrorHandler;
 
 /**
  * A Sound represents a type of sound within the game itself. This could be background music, a simply sound effect or even dialogue.
- * The purpose of a Sound is to just MODEL the sound given to it via the soundFilePath.  
+ * The purpose of a Sound is to just MODEL the sound given to it via the sound file path.  
  * 
- * @author Faiz Gull Chaudhry
+ * @author Faiz Chaudhry
  */
 public class GameSound implements Runnable{
         
@@ -34,7 +34,7 @@ public class GameSound implements Runnable{
                         System.exit(0);
                     }
                 }
-            });
+        });
     }
         
     /**

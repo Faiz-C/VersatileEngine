@@ -12,63 +12,21 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+/**
+ * This handler just helps with dealing with dialogue from files, and formatting text to fit onto the screen.
+ *
+ * @author Faiz Chaudhry
+ */
 public class DialogueHandler {
 
-    public static void appendToFile(JSONObject jObject, String filePath) {
-        try {
-                        
-            File file = new File(filePath);
-                        
-            // Check if file exists and is writable
-                        
-            if (!file.exists() || !file.canWrite()) {
-                ErrorHandler.raiseError("File either doesn't exist or cannot be written to", null);
-                return;
-            }
-                        
-            // Write to file
-            FileWriter fileWriter = new FileWriter(file);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-                        
-            bufferedWriter.append(jObject.toJSONString());
-                        
-            bufferedWriter.close();
-            fileWriter.close();
-                        
-        } catch(Exception e) {
-            ErrorHandler.raiseError("Could not write JSON Object to given file", e);
-        }
-    }
-        
-    // Incomplete
-    public static void loadFromFile(String filePath) {
-        try {
-            File file = new File(filePath);
-                        
-            // Check if file exists and is writable
-                        
-            if (!file.exists() || !file.canRead()) {
-                ErrorHandler.raiseError("File either doesn't exist or cannot be written to", null);
-                return;
-            }
-                        
-            Object obj = new JSONParser().parse(new FileReader(file));
-                        
-            JSONObject jObject = (JSONObject) obj;
-                        
-            JSONArray dialogue = (JSONArray) jObject.get("Dialogue");
-                        
-            for (Object jObj : dialogue) {
-                JSONObject speech = (JSONObject) jObj;
-                //DialoguePiece dialoguePiece = new DialoguePiece((String)speech.get("Speaker"), DialogueHandler(String)speech.get("Speech"));
-            }
-                        
-                        
-        } catch(Exception e) {
-            ErrorHandler.raiseError("Could not read JSON from file", e);
-        }
-    }
-        
+    /**
+     * Takes a single full message (like a sentence) and splits it into smaller messages based spaces, each of which 
+     * will fit on a screen with the given width.
+     *
+     * @param fullMessage -> The complete message wanting to be split 
+     * @param metrics -> The FontMetrics for the graphics object being used
+     * @param screenWidth -> The width of the visible screen
+     */
     public static List<String> splitTextForScreen(String fullMessage, FontMetrics metrics, int screenWidth) {
                 
         String[] words = fullMessage.split(" ");

@@ -9,10 +9,10 @@ import verse.engine.utils.ErrorHandler;
 import verse.engine.utils.SoundHandler;
 
 /**
- * A very straight forward sound manager for the Verse Engine which allows for adding, removing, starting
+ * A very straight forward sound manager for the VersatileEngine which allows for adding, removing, starting
  * and stopping sounds. Also acts as a volume manager as well.
  * 
- * @author Faiz Gull Chaudhry
+ * @author Faiz Chaudhry
  */
 public class SoundManager {
 
@@ -32,8 +32,8 @@ public class SoundManager {
      * the name given. If the name given already exists, it's associated value
      * will be replaced with the new GameSound given.
      * 
-     * @param soundName - Wanted name of the GameSound given
-     * @param sound - Actual GameSound wanting to be added
+     * @param soundName -> Wanted name of the GameSound given
+     * @param sound -> Actual GameSound wanting to be added
      */
     public void addSound(String soundName, GameSound sound) {
         this.soundMap.put(soundName, new SoundHandler(sound));
@@ -42,7 +42,7 @@ public class SoundManager {
     /**
      * Removes the GameSound associated with the given name if it is being stored.
      * 
-     * @param soundName - Name of the GameSound that is to be removed
+     * @param soundName -> Name of the GameSound that is to be removed
      */
     public void removeSound(String soundName) {
         this.soundMap.remove(soundName);
@@ -51,7 +51,7 @@ public class SoundManager {
     /**
      * Starts the given sound if it exists.
      * 
-     * @param soundName - Name of the sound wanting to be started
+     * @param soundName -> Name of the sound wanting to be started
      */
     public void playSound(String soundName) {
         try {
@@ -64,9 +64,9 @@ public class SoundManager {
     /**
      * Stops the given sound if it exists.
      * 
-     * @param soundName - Name of the sound wanting to be started
+     * @param soundName -> Name of the sound wanting to be stopped
      */
-    public void endSound(String soundName) {
+    public void stopSound(String soundName) {
         try {
             this.soundMap.get(soundName).stopSound();
         } catch (Exception e) {
@@ -82,7 +82,7 @@ public class SoundManager {
      */
     public void adjustVolume(String soundName, float newVolume) {
         GameSound sound = this.soundMap.get(soundName).getSound();
-		
+
         FloatControl volumeControl = (FloatControl) sound.getDirectClip().getControl(FloatControl.Type.MASTER_GAIN);
 		
         float dB = (float) (Math.log(newVolume) / Math.log(10.0) * 20.0);

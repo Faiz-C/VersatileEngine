@@ -1,10 +1,10 @@
 package verse.engine.physics;
 
 /**
- * Represents a specific version of a MapObject which is capable of moving around the 
+ * Represents a specific version of a CollidableObject which is capable of moving around the 
  * game map itself.
  * 
- * @author Faiz Gull Chaudhry
+ * @author Faiz Chaudhry
  */
 public abstract class MovableMapObject extends CollidableObject{
         
