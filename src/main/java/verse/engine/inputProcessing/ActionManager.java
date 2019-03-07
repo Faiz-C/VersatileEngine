@@ -6,10 +6,11 @@ import java.util.Map;
 import verse.engine.exceptions.ActionNotTrackedException;
 
 /**
- * The purpose of the GameActionManager is to track the states of all the possible or a subset of all possible actions a 
- * user can take within the game. A game action can be either "happening" (in use/true) or "not happening" (not in use/false). 
+ * The purpose of the ActionManager is to track the states of all the possible or a subset of all possible actions a 
+ * user can take within the game. A game action can be either "happening" (in use/true) or "not happening" 
+ * (not in use/false). 
  * 
- * @author Faiz Gull Chaudhry
+ * @author Faiz Chaudhry
  */
 public class ActionManager {
         
@@ -18,7 +19,7 @@ public class ActionManager {
     public ActionManager(Map<String, Boolean> actionStatuses) {
         this.setActionStatuses(actionStatuses);
     }
-        
+
     public ActionManager() {
         this(new HashMap<String, Boolean>());
     }
@@ -33,10 +34,9 @@ public class ActionManager {
     }
         
     /**
-     * If the given that an action name is already being tracked then its state will
+     * If given an action name which is already being tracked then its state will
      * be changed to the given. If it is not being tracked then it will start
-     * being tracked and its starting state will be the given one. Modifying an
-     * game action's state causes all observers.
+     * being tracked and its starting state will be the given one.
      * 
      * @param action -> The desired game action's name wanting to be modified or added
      */
@@ -47,7 +47,8 @@ public class ActionManager {
     /**
      * Stops tracking the state of the given game action.
      * 
-     * @param action -> The desired GameAction to remove
+     * @param action -> The name of the desired game action to remove
+     * @throws ActionNotTrackedException
      */
     public void removeGameAction(String action) throws ActionNotTrackedException{
         if (!this.actionStatuses.containsKey(action)) {
@@ -58,12 +59,10 @@ public class ActionManager {
     }
         
     /**
-     * Returns whether the given game action is being performed or not. Will return
-     * null if the given game action is not currently being tracked.
+     * Returns whether the given game action is being performed or not.
      * 
      * @param action -> The desired game action's name to check
-     * @return True if the given action is being performed, false if not and null if given action 
-     * isn't being tracked
+     * @return True if the given action is being performed, false if not
      * @throws ActionNotTrackedException 
      */
     public boolean isPerforming(String action) throws ActionNotTrackedException {
@@ -76,9 +75,8 @@ public class ActionManager {
         
     /**
      * An alternative way of modifying where this will specifically start performing
-     * (set using) the given game action as long as the GameActionManager is already
-     * tracking it. If the given game action is not being tracked then no action is
-     * taken. 
+     * (set using) the given game action as long as the ActionManager is already
+     * tracking it.
      * 
      * @param action -> The name of the game action which this manager is currently tracking
      * @throws ActionNotTrackedException 
@@ -93,9 +91,8 @@ public class ActionManager {
         
     /**
      * An alternative way of modifying where this will specifically stop performing
-     * (set to not using) the given game action as long as the GameActionManager is
-     * already tracking it. If the given game action is not being tracked then no action
-     * is taken.
+     * (set to not using) the given game action as long as the ActionManager is
+     * already tracking it.
      * 
      * @param action -> The name of the game action which this manager is currently tracking
      * @throws ActionNotTrackedException 

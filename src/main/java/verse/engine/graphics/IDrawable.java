@@ -6,7 +6,7 @@ import java.awt.Graphics2D;
  * An interface encompassing the idea of an object within the game having the ability to be drawn to the
  * screen for the player to see. For example, the player sprite for a game.
  * 
- * @author Faiz Gull Chaudhry
+ * @author Faiz Chaudhry
  */
 public interface IDrawable {
         

@@ -9,6 +9,14 @@ import verse.engine.animation.Animation;
 import verse.engine.animation.TextAnimation;
 import verse.engine.updatable.IUpdatable;
 
+/**
+ * Representation of an event of which features dialogue. The DialogueEvent will take a DialoguePiece and animate it
+ * via TextAnimation. Simply put, it allows a DialoguePiece to be drawn onto the screen.
+ *
+ * Note: This is still an unfinished feature of the VerseEngine
+ *
+ * @author Faiz Chaudhry
+ */
 public class DialogueEvent implements IUpdatable{
 
     private DialoguePiece eventDialogue;

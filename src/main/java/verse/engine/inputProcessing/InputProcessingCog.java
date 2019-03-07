@@ -3,7 +3,7 @@ package verse.engine.inputProcessing;
 import verse.engine.IEngineCog;
 
 /**
- * This is component of the Game Engine which processors user input as it comes in and then allows the
+ * This is the component of the VersatileEngine which processes user input as it comes in and then allows the
  * game to react to the input it processes.
  * 
  * @author Faiz Gull Chaudhry

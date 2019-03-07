@@ -6,14 +6,14 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 
 /**
- * A Frame to start the game and allows for custom content presentation (similar to custom user defined graphics). The 
- * Frame supports most well known resolutions. Currently only fixes to given dimensions.
+ * A frame to start the game and allows for custom content presentation (similar to custom user defined graphics). The 
+ * frame supports most well known resolutions. Currently only fixes to given dimensions.
  * 
- * @author Faiz Gull Chaudhry
+ * @author Faiz Chaudhry
  */
-@SuppressWarnings("serial")
 public class VFrame extends JFrame{
 
+    // Constants to help with determining the size of the frame
     public static final Dimension STANDARD = new Dimension(640,480), HD = new Dimension(1280, 720), FULL_HD = new Dimension(1920,1080),
         QUAD_HD = new Dimension(2560, 1440), ULTRA_HD = new Dimension(3840, 2160);
         
@@ -35,6 +35,6 @@ public class VFrame extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
-	
-	
+        
+        
 }

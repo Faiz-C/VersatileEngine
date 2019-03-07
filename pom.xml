@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>VerseEngine</groupId>
-  <artifactId>VerseEngine</artifactId>
+  <groupId>VersatileEngine</groupId>
+  <artifactId>VersatileEngine</artifactId>
   <version>1.0</version>
-  <name>VerseEngine</name>
-  <description>The Versitile Engine, an extensible 2D game engine library. </description>
+  <name>VersatileEngine</name>
+  <description>The Versatile Engine, an extensible 2D game engine library. </description>
 
   <properties>
     <maven.compiler.source>6</maven.compiler.source>

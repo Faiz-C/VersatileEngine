@@ -1,6 +1,10 @@
 package verse.engine.exceptions;
 
-@SuppressWarnings("serial")
+/**
+ * A simple Exception which indicates that the action you are asking for is not actually being accounted for.
+ * 
+ * @author Faiz Chaudhry
+ */
 public class ActionNotTrackedException extends Exception{
 
     public ActionNotTrackedException(String actionName) {

@@ -1,6 +1,11 @@
 package verse.engine.exceptions;
 
-@SuppressWarnings("serial")
+/**
+ * An Exception to indicate that you are trying to start a given Sound again without being finished yet, it needs
+ * to be stopped first.
+ * 
+ * @author Faiz Chaudhry
+ */
 public class SoundNotFinishedException extends Exception{
         
     public SoundNotFinishedException() {

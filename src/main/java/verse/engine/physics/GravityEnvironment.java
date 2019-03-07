@@ -5,6 +5,11 @@ import java.util.List;
 
 import verse.engine.updatable.IUpdatable;
 
+/**
+ * 
+ *
+ * @author Faiz Chaudhry
+ */
 public class GravityEnvironment implements IUpdatable{
         
     private List<CollidableObject> cObjects;

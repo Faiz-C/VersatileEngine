@@ -2,10 +2,10 @@ package verse.engine.inputProcessing;
 
 /**
  * The purpose of an InputTranslator is to relate a User's input to an action within the game
- * itself. All InputTranslators need to be able to translateInput given some form of User input
+ * itself. All InputTranslators need to be able to translate input given some form of User input
  * which they are designed to interrupt.
  * 
- * @author Faiz Gull Chaudhry
+ * @author Faiz Chaudhry
  */
 public interface IInputTranslator {
 

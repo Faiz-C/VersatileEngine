@@ -1,17 +1,15 @@
 package verse.engine.graphics;
 
 import java.awt.Dimension;
-
-import javax.swing.JPanel;
+import java.awt.Container;
 
 /**
  * A very simple container used for drawing onto. It doesn't do much else but can be added
  * onto.
  * 
- * @author Faiz Gull Chaudhry
+ * @author Faiz Chaudhry
  */
-@SuppressWarnings("serial")
-public class DrawScreen extends JPanel{
+public class DrawScreen extends Container{
         
     public DrawScreen(Dimension screenDimension) {
         super();
