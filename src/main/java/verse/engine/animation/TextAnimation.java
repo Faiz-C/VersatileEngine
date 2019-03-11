@@ -20,7 +20,7 @@ public class TextAnimation extends Animation{
     
     @Override
     public void draw(Graphics2D g, int x, int y) {
-        g.drawString(this.fullMessage.substring(0, this.currentAnimationPosition), x, y);
+        g.drawString(this.fullMessage.substring(0, this.currentAnimationPosition + 1), x, y);
     }
     
 }

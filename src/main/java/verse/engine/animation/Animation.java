@@ -38,7 +38,7 @@ public abstract class Animation implements IUpdatable, IObserver{
      */
     private void animate() {
         // Loops the Animation if need be
-        if (this.currentAnimationPosition >= this.maxAnimationPosition) {	
+        if (this.currentAnimationPosition >= this.maxAnimationPosition - 1) {	
             if (this.loopCount == Animation.INFINITE_LOOP) {
                 this.currentAnimationPosition = 0;
             } else if (this.loopCount > 0) {
