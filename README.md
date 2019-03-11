@@ -6,9 +6,11 @@ Currently, the project needs to be converted to a .jar and added as an external 
 
 The examine the tests try running the following commands (assuming you have maven install for the command line):
 
-mvn clean install
-mvn compile
-mvn exec:java -Dexec.mainClass=verse.engine.manualtesting.AnimationMainTesting -Dexec.classPath="test"
+`mvn clean install`
+
+`mvn compile`
+
+`mvn exec:java -Dexec.mainClass=verse.engine.manualtesting.AnimationMainTesting -Dexec.classPath="test"`
 
 This will run the animation testing class I made for showcase. 
 
