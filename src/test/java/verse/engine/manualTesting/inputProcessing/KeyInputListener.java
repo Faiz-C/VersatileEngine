@@ -1,5 +1,4 @@
-package manualTesting.inputProcessing;
-
+package verse.engine.manualTesting.inputProcessing;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -30,21 +29,21 @@ public class KeyInputListener extends KeyAdapter{
         // Translate the input first
         String action = this.inputTranslator.translateInput(e.getKeyCode());
         if (action != null && action != this.lastActionTaken) {
-        	
-        	try {
-        	
-        		// Stop performing the last action if we have one
-        		if (this.lastActionTaken != null) this.actionManager.stopPerforming(this.lastActionTaken);
+                
+            try {
+                
+                // Stop performing the last action if we have one
+                if (this.lastActionTaken != null) this.actionManager.stopPerforming(this.lastActionTaken);
                         
-        		// Start performing the requested action
-        		this.actionManager.startPerforming(action);
+                // Start performing the requested action
+                this.actionManager.startPerforming(action);
                         
-        		// Update the last performed action
-        		this.lastActionTaken = action;
-        		
-        	}catch (Exception ex) {
-        		ErrorHandler.raiseError("Failed to change/start action", ex);        		
-        	}
+                // Update the last performed action
+                this.lastActionTaken = action;
+                        
+            }catch (Exception ex) {
+                ErrorHandler.raiseError("Failed to change/start action", ex);        		
+            }
         }
     }
         
@@ -53,14 +52,14 @@ public class KeyInputListener extends KeyAdapter{
         // Translate the input first
         String action = this.inputTranslator.translateInput(e.getKeyCode());
         if (action != null) {
-        	try {
-        		// Stop using the given action
-        		this.actionManager.stopPerforming(action);
-        		this.lastActionTaken = null;
-        		
-        	} catch(Exception ex) {
-        		ErrorHandler.raiseError("Failed to stop performing an action", ex);
-        	}
+            try {
+                // Stop using the given action
+                this.actionManager.stopPerforming(action);
+                this.lastActionTaken = null;
+                        
+            } catch(Exception ex) {
+                ErrorHandler.raiseError("Failed to stop performing an action", ex);
+            }
 
         }
     }

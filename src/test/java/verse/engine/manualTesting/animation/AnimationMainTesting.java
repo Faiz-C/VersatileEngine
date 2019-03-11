@@ -12,7 +12,7 @@ public class AnimationMainTesting {
                     new VFrame("Testing", VFrame.STANDARD, new AnimationTest(60, VFrame.STANDARD));
                 }
             });
-		
+                
     }
 
 }

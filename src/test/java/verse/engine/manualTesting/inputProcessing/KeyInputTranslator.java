@@ -1,4 +1,4 @@
-package manualTesting.inputProcessing;
+package verse.engine.manualTesting.inputProcessing;
 
 import java.awt.event.KeyEvent;
 import java.util.HashMap;

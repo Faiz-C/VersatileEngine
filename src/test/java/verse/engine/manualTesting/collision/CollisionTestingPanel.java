@@ -1,4 +1,4 @@
-package manualTesting.collision;
+package verse.engine.manualTesting.collision;
 
 import java.awt.Color;
 import java.awt.Dimension;

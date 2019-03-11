@@ -1,4 +1,4 @@
-package manualTesting.tiles;
+package verse.engine.manualTesting.tiles;
 
 import verse.engine.graphics.VFrame;
 

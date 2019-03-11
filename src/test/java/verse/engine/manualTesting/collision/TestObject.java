@@ -1,4 +1,4 @@
-package manualTesting.collision;
+package verse.engine.manualTesting.collision;
 
 import java.awt.Graphics2D;
 import verse.engine.physics.CollidableObject;
