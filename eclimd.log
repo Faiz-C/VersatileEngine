@@ -1,0 +1,28 @@
+2019-03-11 13:52:26,226 INFO  [org.eclim.eclipse.EclimDaemon] Workspace: /home/faiz/Desktop/VersatileEngine
+2019-03-11 13:52:26,230 INFO  [org.eclim.eclipse.EclimDaemon] Home: /home/faiz/.eclipse/org.eclipse.platform_4.10.0_155965261_linux_gtk_x86_64/plugins/org.eclim_2.8.0/
+2019-03-11 13:52:26,230 INFO  [org.eclim.eclipse.EclimDaemon] Starting eclim...
+2019-03-11 13:52:26,317 INFO  [org.eclim.eclipse.EclimDaemon] Loading plugin org.eclim
+2019-03-11 13:52:26,319 INFO  [org.eclim.eclipse.EclimDaemon] Loading plugin org.eclim.core
+2019-03-11 13:52:27,016 INFO  [org.eclim.plugin.core.CorePlugin] Loading eclim plugins...
+2019-03-11 13:52:27,019 INFO  [org.eclim.plugin.core.CorePlugin] Plugins loaded.
+2019-03-11 13:52:27,020 INFO  [org.eclim.eclipse.EclimDaemon] Loaded plugin org.eclim.core
+2019-03-11 13:52:27,020 INFO  [org.eclim.eclipse.EclimDaemon] Waiting on running jobs before starting eclimd...
+2019-03-11 13:52:30,021 INFO  [org.eclim.eclipse.EclimDaemon] Jobs finished.
+2019-03-11 13:52:30,022 INFO  [org.eclim.eclipse.EclimDaemon] Eclim Server Started on: 127.0.0.1:9091
+2019-03-11 14:20:05,579 INFO  [org.eclim.eclipse.EclimDaemon] Shutting down eclim...
+2019-03-11 14:20:05,585 INFO  [org.eclim.eclipse.EclimDaemon] Stopping plugin org.eclim.core
+2019-03-11 14:20:05,588 INFO  [org.eclim.eclipse.EclimDaemon] Eclim stopped.
+2019-03-11 14:20:40,203 INFO  [org.eclim.eclipse.EclimDaemon] Workspace: /home/faiz/Desktop/VersatileEngine
+2019-03-11 14:20:40,206 INFO  [org.eclim.eclipse.EclimDaemon] Home: /home/faiz/.eclipse/org.eclipse.platform_4.10.0_155965261_linux_gtk_x86_64/plugins/org.eclim_2.8.0/
+2019-03-11 14:20:40,211 INFO  [org.eclim.eclipse.EclimDaemon] Starting eclim...
+2019-03-11 14:20:40,222 INFO  [org.eclim.eclipse.EclimDaemon] Loading plugin org.eclim
+2019-03-11 14:20:40,225 INFO  [org.eclim.eclipse.EclimDaemon] Loading plugin org.eclim.core
+2019-03-11 14:20:40,405 INFO  [org.eclim.plugin.core.CorePlugin] Loading eclim plugins...
+2019-03-11 14:20:40,414 INFO  [org.eclim.plugin.core.CorePlugin] Plugins loaded.
+2019-03-11 14:20:40,415 INFO  [org.eclim.eclipse.EclimDaemon] Loaded plugin org.eclim.core
+2019-03-11 14:20:40,415 INFO  [org.eclim.eclipse.EclimDaemon] Waiting on running jobs before starting eclimd...
+2019-03-11 14:20:43,416 INFO  [org.eclim.eclipse.EclimDaemon] Jobs finished.
+2019-03-11 14:20:43,417 INFO  [org.eclim.eclipse.EclimDaemon] Eclim Server Started on: 127.0.0.1:9091
+2019-03-11 14:20:56,679 INFO  [org.eclim.eclipse.EclimDaemon] Shutting down eclim...
+2019-03-11 14:20:56,685 INFO  [org.eclim.eclipse.EclimDaemon] Stopping plugin org.eclim.core
+2019-03-11 14:20:56,687 INFO  [org.eclim.eclipse.EclimDaemon] Eclim stopped.
