@@ -1,6 +1,6 @@
 package verse.engine.manualTesting.collision;
 
-import manualTesting.inputProcessing.KeyInputTranslator;
+import verse.engine.manualTesting.inputProcessing.KeyInputTranslator;
 import verse.engine.inputProcessing.ActionManager;
 import verse.engine.inputProcessing.IInputProcessor;
 import verse.engine.physics.Coordinate;

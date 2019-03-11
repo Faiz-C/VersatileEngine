@@ -7,8 +7,8 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
 
-import manualTesting.inputProcessing.KeyInputListener;
-import manualTesting.inputProcessing.KeyInputTranslator;
+import verse.engine.manualTesting.inputProcessing.KeyInputListener;
+import verse.engine.manualTesting.inputProcessing.KeyInputTranslator;
 import verse.engine.IEngineCog;
 import verse.engine.graphics.GraphicsCog;
 import verse.engine.inputProcessing.*;
