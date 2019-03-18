@@ -10,7 +10,7 @@ The examine the tests try running the following commands (assuming you have mave
 
 `mvn compile`
 
-`mvn exec:java -Dexec.mainClass=verse.engine.manualtesting.AnimationMainTesting -Dexec.classPath="test"`
+`mvn exec:java -Dexec.mainClass=verse.engine.manualtesting.animation.AnimationMainTesting -Dexec.classpathScope="test"`
 
 This will run the animation testing class I made for showcase. 
 
