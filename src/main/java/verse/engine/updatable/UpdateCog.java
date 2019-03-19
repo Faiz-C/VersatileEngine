@@ -16,22 +16,18 @@ import verse.engine.IEngineCog;
  */
 public class UpdateCog implements IEngineCog{
 
-    private Set<IUpdatable> entitesToUpdate;
-        
+    private IUpdatable state;
+    
     public UpdateCog() {
-        this.entitesToUpdate = new HashSet<IUpdatable>();
+        this.state = null;
     }
         
     public void initTurn(Object... args) {
-        for (Object o : args) {
-            this.entitesToUpdate.add((IUpdatable) o);
-        }
+        this.state = (IUpdatable) args[0];
     }
 
     public void turnCog() {
-        for (IUpdatable updatable : this.entitesToUpdate) {
-            updatable.update();
-        }
+        this.state.update();
     }
 
 }

@@ -8,6 +8,7 @@ import java.util.List;
 import verse.engine.animation.Animation;
 import verse.engine.animation.TextAnimation;
 import verse.engine.updatable.IUpdatable;
+import verse.engine.graphics.IDrawable;
 
 /**
  * Representation of an event of which features dialogue. The DialogueEvent will take a DialoguePiece and animate it
@@ -17,7 +18,7 @@ import verse.engine.updatable.IUpdatable;
  *
  * @author Faiz Chaudhry
  */
-public class DialogueEvent implements IUpdatable{
+public class DialogueEvent implements IUpdatable, IDrawable{
 
     private DialoguePiece eventDialogue;
     private List<Animation> animatedDialogue;
@@ -35,7 +36,7 @@ public class DialogueEvent implements IUpdatable{
         }
     }
         
-    public void drawEvent(Graphics2D g, int x, int y) {
+    public void draw(Graphics2D g, int x, int y) {
         FontMetrics metrics = g.getFontMetrics();
         for (int lineNum = 0; lineNum < this.eventDialogue.getDialogueLength(); lineNum++) {
             this.animatedDialogue.get(lineNum).draw(g, x, y + (lineNum * metrics.getHeight()) + 2);

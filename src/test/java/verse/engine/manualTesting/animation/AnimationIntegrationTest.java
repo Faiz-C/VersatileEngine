@@ -1,23 +1,44 @@
-package verse.engine.manualTesting.tiles;
+package verse.engine.manualTesting.animation;
 
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.util.List;
+
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
+
 import verse.engine.IEngineCog;
+import verse.engine.animation.Animation;
+import verse.engine.animation.SpriteAnimation;
+import verse.engine.dialogue.DialogueEvent;
+import verse.engine.dialogue.DialoguePiece;
 import verse.engine.graphics.GraphicsCog;
+import verse.engine.updatable.UpdateCog;
+import verse.engine.utils.DialogueHandler;
 import verse.engine.utils.ErrorHandler;
+import verse.engine.utils.SpriteSheet;
+import verse.engine.utils.SpriteSheetHandler;
 
 @SuppressWarnings("serial")
-public class TileTestingPanel extends JPanel implements Runnable{
+public class AnimationIntegrationTest extends JPanel implements Runnable{
         
     private long fps;
-    private IEngineCog graphicsCog;
+    private IEngineCog graphicsCog, updateCog;
     private BufferedImage gameImage;
+    private Graphics2D graphics;
     private Thread thread;
 
-    private TileGameState state;
-       
-    public TileTestingPanel(long fps, Dimension dimension) {
+    private AnimationGameState state;
+
+    private DialogueEvent dialogueEvent;
+    
+    private Animation upMovement, downMovement, leftMovement, rightMovement;
+    
+    public AnimationIntegrationTest(long fps, Dimension dimension) {
         super();
                 
         this.setPreferredSize(dimension);
@@ -26,15 +47,18 @@ public class TileTestingPanel extends JPanel implements Runnable{
                 
         this.fps = 1000 / fps;
         this.graphicsCog = new GraphicsCog();
+        this.updateCog = new UpdateCog();
         this.init(dimension);
     }
         
     // Setup the Image we use to draw and the graphics we use to draw on it
     private void init(Dimension dimension) {
         this.gameImage = new BufferedImage((int)dimension.getWidth(), (int)dimension.getHeight(), BufferedImage.TYPE_INT_RGB);
-        this.state = new TileGameState(dimension);
+        this.graphics = (Graphics2D) gameImage.getGraphics();
+        this.state = new AnimationGameState(dimension, this.graphics);
+        this.updateCog.initTurn(this.state);
     }
-        
+            
     @Override
     public void addNotify() {
         super.addNotify();
@@ -51,9 +75,11 @@ public class TileTestingPanel extends JPanel implements Runnable{
 
             start = System.nanoTime();
                         
-            this.graphicsCog.initTurn(this, this.gameImage, this.state); // Wipe the image and draw onto it again
-            this.graphicsCog.turnCog(); // Draw the image onto the screen
+            this.graphicsCog.initTurn(this, this.gameImage, this.state);
                         
+            this.updateCog.turnCog();
+            this.graphicsCog.turnCog();
+
             elapsed = System.nanoTime() - start;
             wait =  this.fps - elapsed / 1000000;
 
@@ -67,5 +93,4 @@ public class TileTestingPanel extends JPanel implements Runnable{
 
         }
     }
-		
 }

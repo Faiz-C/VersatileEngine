@@ -1,7 +1,6 @@
 package verse.engine.manualTesting.graphics;
 
 import java.awt.Dimension;
-import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
@@ -17,9 +16,10 @@ public class GraphicsTesting extends JPanel implements Runnable{
     private long fps;
     private IEngineCog graphicsCog;
     private BufferedImage gameImage;
-    private Graphics2D graphics;
     private Thread thread;
-        
+
+    private DrawingGameState state;
+    
     public GraphicsTesting(long fps, Dimension dimension) {
         super();
                 
@@ -35,13 +35,7 @@ public class GraphicsTesting extends JPanel implements Runnable{
     // Setup the Image we use to draw and the graphics we use to draw on it
     private void init() {
         this.gameImage = new BufferedImage((int)VFrame.STANDARD.getWidth(), (int)VFrame.STANDARD.getHeight(), BufferedImage.TYPE_INT_RGB);
-        this.graphics = (Graphics2D) gameImage.getGraphics();
-    }
-        
-        
-    private void drawStuff() {
-        DrawTesting.drawString(this.graphics);
-        DrawTesting.drawRectangle(this.graphics);
+        this.state = new DrawingGameState();
     }
         
     @Override
@@ -60,9 +54,7 @@ public class GraphicsTesting extends JPanel implements Runnable{
 
             start = System.nanoTime();
                         
-            this.graphicsCog.initTurn(this, this.gameImage);
-                        
-            this.drawStuff();
+            this.graphicsCog.initTurn(this, this.gameImage, this.state);
             this.graphicsCog.turnCog();
                         
             elapsed = System.nanoTime() - start;

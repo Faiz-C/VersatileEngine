@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import verse.engine.IEngineCog;
+import verse.engine.gameStates.GameState;
 
 /**
  * The Graphics Cog is responsible for drawing the graphics of the game. When run it expects to receive 
@@ -24,12 +25,16 @@ public class GraphicsCog implements IEngineCog{
     public void initTurn(Object... args) {
         this.renderedImage = (BufferedImage) args[1];
         this.canvas = (Container) args[0];
+        GameState state = (GameState) args[2];
         
         // Clear the screen for the next set of rendering
         Graphics2D imageGraphics = (Graphics2D) this.renderedImage.getGraphics();
         imageGraphics.setComposite(AlphaComposite.Clear);
         imageGraphics.fillRect(0, 0, this.canvas.getWidth(), this.canvas.getHeight());
         imageGraphics.setComposite(AlphaComposite.SrcOver);
+
+        // Draw the state to the image
+        state.draw(imageGraphics, 0, 0);
     }
     
     public void turnCog() {

@@ -15,18 +15,18 @@ import verse.engine.inputProcessing.*;
 import verse.engine.utils.ErrorHandler;
 
 @SuppressWarnings("serial")
-public class CollisionTestingPanel extends JPanel implements Runnable {        
+public class CollisionIntegrationTest extends JPanel implements Runnable {        
         
     private long fps;
     private IEngineCog graphicsCog, inputCog;
     private BufferedImage gameImage;
     private Graphics2D graphics;
     private Thread thread;
-        
-    private TestObject obj1, obj2;
+
+    private CollisionGameState state;
     private ActionManager actionManager;
         
-    public CollisionTestingPanel(long fps, Dimension dimension) {
+    public CollisionIntegrationTest(long fps, Dimension dimension) {
         super();
                 
         this.setPreferredSize(dimension);
@@ -37,7 +37,7 @@ public class CollisionTestingPanel extends JPanel implements Runnable {
         this.graphicsCog = new GraphicsCog();
         this.init(dimension);
                 
-        IInputProcessor inputProcessor = new CollisionMovementProcessor(this.obj2, this.obj1);
+        IInputProcessor inputProcessor = new CollisionMovementProcessor(this.state.getTestObject2(), this.state.getTestObject1());
         IInputTranslator inputTranslator = new KeyInputTranslator();
         this.actionManager = new ActionManager();
                 
@@ -56,21 +56,9 @@ public class CollisionTestingPanel extends JPanel implements Runnable {
         this.gameImage = new BufferedImage((int)dimension.getWidth(), (int)dimension.getHeight(), BufferedImage.TYPE_INT_RGB);
         this.graphics = (Graphics2D) gameImage.getGraphics();
                 
-        this.obj1 = new TestObject(32, 32, 100, 100);
-        this.obj2 = new TestObject(32, 32, 10, 10);
-                
+        this.state = new CollisionGameState();       
     }
-        
-    // When drawing I need to find a way to clear before drawing onto a new image
-    private void drawStuff() {
-        this.graphics.setColor(Color.blue);
-        this.obj1.draw(this.graphics);
-                
-        this.graphics.setColor(this.obj2.hasCollided(this.obj1) ? Color.red : Color.white);
-        this.obj2.draw(this.graphics);
-                
-    }
-        
+            
     @Override
     public void addNotify() {
         super.addNotify();
@@ -88,10 +76,9 @@ public class CollisionTestingPanel extends JPanel implements Runnable {
             start = System.nanoTime();
                         
             this.inputCog.initTurn(this.actionManager);
-            this.graphicsCog.initTurn(this, this.gameImage);
+            this.graphicsCog.initTurn(this, this.gameImage, this.state);
                         
             this.inputCog.turnCog();
-            this.drawStuff();
             this.graphicsCog.turnCog();
                         
             elapsed = System.nanoTime() - start;
