@@ -11,12 +11,12 @@ import verse.engine.inputProcessing.IInputTranslator;
 import verse.engine.inputProcessing.InputProcessingCog;
 
 @SuppressWarnings("serial")
-public class InputTesting extends JFrame{
+public class InputTest extends JFrame{
         
     private IEngineCog inputProcessingComponent;
     private ActionManager actionManager;
 
-    public InputTesting() {
+    public InputTest() {
         super("Testing Input");
         this.setSize(new Dimension(200, 200));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -55,7 +55,7 @@ public class InputTesting extends JFrame{
     }
 	
     public static void main(String args[]) {
-        new InputTesting();
+        new InputTest();
     }
 	
 }

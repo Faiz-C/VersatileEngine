@@ -2,7 +2,7 @@ package verse.engine.manualTesting.tiles;
 
 import verse.engine.graphics.VFrame;
 
-public class TileSetTesting {
+public class TilesTest {
         
     @SuppressWarnings("unused")
     public static void main(String args[]) {	

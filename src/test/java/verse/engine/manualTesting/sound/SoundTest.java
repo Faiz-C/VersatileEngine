@@ -3,7 +3,7 @@ package verse.engine.manualTesting.sound;
 import verse.engine.sound.GameSound;
 import verse.engine.sound.SoundManager;
 
-public class SoundTesting {
+public class SoundTest {
         
     public static void main(String[] args) {
         SoundManager soundManager = new SoundManager();

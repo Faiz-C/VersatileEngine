@@ -4,7 +4,7 @@ import javax.swing.SwingUtilities;
 
 import verse.engine.graphics.VFrame;
 
-public class GraphicsMainTesting {
+public class GraphicsTest {
         
     public static void main(String args[]) {
         SwingUtilities.invokeLater(new Runnable() {

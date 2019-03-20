@@ -10,7 +10,29 @@ The examine the tests try running the following commands (assuming you have mave
 
 `mvn compile`
 
-`mvn exec:java -Dexec.mainClass=verse.engine.manualTesting.animation.AnimationMainTesting -Dexec.classpathScope="test"`
+To test Animation run the below command:
+
+`mvn exec:java -Dexec.mainClass=verse.engine.manualTesting.animation.AnimationTest -Dexec.classpathScope="test"`
+
+To test Collision run the below command:
+
+`mvn exec:java -Dexec.mainClass=verse.engine.manualTesting.collision.CollisionTest -Dexec.classpathScope="test"`
+
+To test Graphics (like just solely rendering, the above two do more with graphics) run the below command:
+
+`mvn exec:java -Dexec.mainClass=verse.engine.manualTesting.graphics.GraphicsTest -Dexec.classpathScope="test"`
+
+To test Input Processing (displaying what the ActionManager does, uses arrow keys) run the command below:
+
+`mvn exec:java -Dexec.mainClass=verse.engine.manualTesting.inputProcessing.InputTest -Dexec.classpathScope="test"`
+
+To test Sound (the song played is Thrill by Band Maid) run the below command:
+
+`mvn exec:java -Dexec.mainClass=verse.engine.manualTesting.sound.SoundTest -Dexec.classpathScope="test"`
+
+to test Tile loading/display run the below command:
+
+`mvn exec:java -Dexec.mainClass=verse.engine.manualTesting.tiles.TilesTest -Dexec.classpathScope="test"`
 
 This will run the animation testing class I made for showcase. 
 

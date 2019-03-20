@@ -3,7 +3,7 @@ package verse.engine.manualTesting.animation;
 import javax.swing.SwingUtilities;
 import verse.engine.graphics.VFrame;
 
-public class AnimationMainTesting {
+public class AnimationTest {
         
     public static void main(String args[]) {
         SwingUtilities.invokeLater(new Runnable() {

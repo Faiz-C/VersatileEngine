@@ -4,7 +4,7 @@ import javax.swing.SwingUtilities;
 
 import verse.engine.graphics.VFrame;
 
-public class CollisionTesting {
+public class CollisionTest {
         
     public static void main(String args[]) {
                 
