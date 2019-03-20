@@ -12,15 +12,19 @@ public class SoundTesting {
                 
         soundManager.addSound(SoundManager.BGM, sound);
                 
-        soundManager.adjustVolume(SoundManager.BGM, 0.05f);
+        soundManager.adjustVolume(SoundManager.BGM, 0.5f);
                 
         soundManager.playSound(SoundManager.BGM);
+
+        System.out.println("Starting To Play a Sound, then sleeping");
                 
         try {
             Thread.sleep(300000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        System.out.println("Finished Playing the Sound!!");
     }
 
 }
