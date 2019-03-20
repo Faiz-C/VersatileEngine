@@ -34,7 +34,5 @@ to test Tile loading/display run the below command:
 
 `mvn exec:java -Dexec.mainClass=verse.engine.manualTesting.tiles.TilesTest -Dexec.classpathScope="test"`
 
-This will run the animation testing class I made for showcase. 
-
 # Additional Information
 Currently this is just the first release (or working version) of the VersatileEngine. The engine will be updated and refined more over time as I get time to update it. For now, enjoy this library I made to help you develop games in java.
