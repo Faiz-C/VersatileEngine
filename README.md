@@ -10,7 +10,7 @@ The examine the tests try running the following commands (assuming you have mave
 
 `mvn compile`
 
-To test Animation run the below command:
+To test Animation run the below command (tested with Final Fantasy 1 sprites):
 
 `mvn exec:java -Dexec.mainClass=verse.engine.manualTesting.animation.AnimationTest -Dexec.classpathScope="test"`
 
@@ -30,7 +30,7 @@ To test Sound (the song played is Thrill by Band Maid) run the below command:
 
 `mvn exec:java -Dexec.mainClass=verse.engine.manualTesting.sound.SoundTest -Dexec.classpathScope="test"`
 
-to test Tile loading/display run the below command:
+to test Tile loading/display run the below command (tested with borrowed tile sprites):
 
 `mvn exec:java -Dexec.mainClass=verse.engine.manualTesting.tiles.TilesTest -Dexec.classpathScope="test"`
 
