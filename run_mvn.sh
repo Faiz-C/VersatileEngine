@@ -1,12 +1,12 @@
 #!/bin/bash
 
-USAGE="USAGE:\n
+ SAGE="USAGE:\n
     run_mvn -i [--install] -c [--compile] -t [--test] path.to.mainClass\n
-    optional arguments: [-t -i -c]\n
+    optional arguments: [-t -i -c -r]\n
     
     -i, --install : clean install before running\n
     -c, --compile : compile maven project and java code before running\n
-    -t, --test : specifies whether the main class is in project src or test directories" 
+    -t, --test : specifies whether the main class is in project src or test directories"
 
 # Check if pom.xml is available, if not then we stop
 if [ ! -f "pom.xml" ]; then
