@@ -1,4 +1,4 @@
-package verse.engine.gameStates;
+package verse.engine.state;
 
 import java.util.List;
 import java.util.ArrayList;

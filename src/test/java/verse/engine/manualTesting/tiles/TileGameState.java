@@ -5,7 +5,7 @@ import java.awt.Graphics2D;
 
 import verse.engine.tiles.TileMap;
 import verse.engine.tiles.TileMapManager;
-import verse.engine.gameStates.GameState;
+import verse.engine.state.GameState;
 
 public class TileGameState extends GameState {
 

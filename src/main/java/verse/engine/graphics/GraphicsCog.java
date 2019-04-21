@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import verse.engine.IEngineCog;
-import verse.engine.gameStates.GameState;
+import verse.engine.state.GameState;
 
 /**
  * The Graphics Cog is responsible for drawing the graphics of the game. When run it expects to receive 

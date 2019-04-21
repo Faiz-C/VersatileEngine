@@ -16,7 +16,7 @@ import verse.engine.animation.SpriteAnimation;
 import verse.engine.dialogue.DialogueEvent;
 import verse.engine.dialogue.DialoguePiece;
 import verse.engine.utils.*;
-import verse.engine.gameStates.GameState;
+import verse.engine.state.GameState;
 
 public class AnimationGameState extends GameState {
 

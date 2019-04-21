@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
 
-import verse.engine.gameStates.GameState;
+import verse.engine.state.GameState;
 
 @SuppressWarnings("serial")
 public class CollisionGameState extends GameState{        

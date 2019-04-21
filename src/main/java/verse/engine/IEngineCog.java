@@ -1,6 +1,5 @@
 package verse.engine;
 
-
 /**
  * An EngineCog is an abstraction for any piece wanting to be layered into the
  * VerseEngine.

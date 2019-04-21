@@ -1,7 +1,7 @@
 package verse.engine.manualTesting.graphics;
 
 import java.awt.Graphics2D;
-import verse.engine.gameStates.GameState;
+import verse.engine.state.GameState;
 
 public class DrawingGameState extends GameState {
     

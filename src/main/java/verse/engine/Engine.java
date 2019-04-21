@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public abstract class Engine implements Runnable{
 
-    public static final enum CogType {UPDATE, INPUT, GRAPHIC}
+    public static enum CogType {UPDATE, INPUT, GRAPHIC}
     
     private List<IEngineCog> inputCogs, updateCogs, graphicCogs;
 
