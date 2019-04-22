@@ -9,7 +9,8 @@ Currently, the project needs to be converted to a .jar and added as an external 
 All credit goes to the original creators and they can be found below:
 
 The sprites used for the animation showcase come from bagzie on opengameart.org and can be found here: https://opengameart.org/content/bat-sprite
-The sound byte used for the sound showcase come from yummie on freesound.org and can be found here: https://freesound.org/people/yummie/sounds/410574
+
+The sound byte used for the sound showcase comes from yummie on freesound.org and can be found here: https://freesound.org/people/yummie/sounds/410574
 
 # Additional Information
 Nearly finished the VersatileEngine, now easily usable with a single class instead of having to build it yourself. The engine will be updated and refined more over time as I get time to update it. For now, enjoy this library I made to help you develop games in java.
