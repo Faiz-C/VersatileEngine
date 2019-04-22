@@ -12,4 +12,4 @@ The sprites used for the animation showcase come from bagzie on opengameart.org 
 The sound byte used for the sound showcase come from yummie on freesound.org and can be found here: https://freesound.org/people/yummie/sounds/410574
 
 # Additional Information
-Nearly finished the VersatileEngine, now working easily usable with a single class instead of having to build it yourself. The engine will be updated and refined more over time as I get time to update it. For now, enjoy this library I made to help you develop games in java.
+Nearly finished the VersatileEngine, now easily usable with a single class instead of having to build it yourself. The engine will be updated and refined more over time as I get time to update it. For now, enjoy this library I made to help you develop games in java.
