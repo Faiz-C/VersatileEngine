@@ -44,11 +44,12 @@ public class EngineTestGameState extends GameState {
         // Just note that this test map is just one screen though, you can test it on your own!
         tileMap.setPivotPoint(0, 0); // Change pivot point of TileMap to see different parts of it 
 
+        /*
         GameSound sound = new GameSound("src/test/resources/Thrill.mp3", true);
         VerseEngine.getInstance().getSoundManager().addSound(SoundManager.BGM, sound);
         VerseEngine.getInstance().getSoundManager().adjustVolume(SoundManager.BGM, 0.5f);
         VerseEngine.getInstance().getSoundManager().playSound(SoundManager.BGM);
-
+        */
     }
 
     public void draw(Graphics2D g, int x, int y) {

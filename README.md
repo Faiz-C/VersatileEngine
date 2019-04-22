@@ -26,7 +26,7 @@ To test Input Processing (displaying what the ActionManager does, uses arrow key
 
 `mvn exec:java -Dexec.mainClass=verse.engine.manualTesting.inputProcessing.InputTest -Dexec.classpathScope="test"`
 
-To test Sound (the song played is Thrill by Band Maid) run the below command:
+To test Sound (please add your own .mp3 to test into resources and modify the testing file) run the below command:
 
 `mvn exec:java -Dexec.mainClass=verse.engine.manualTesting.sound.SoundTest -Dexec.classpathScope="test"`
 

@@ -8,8 +8,7 @@ public class SoundTest {
     public static void main(String[] args) {
         SoundManager soundManager = new SoundManager();
                 
-        GameSound sound = new GameSound("src/test/resources/Thrill.mp3", true);
-                
+        GameSound sound = new GameSound("src/test/resources/YOUR_SONG.mp3", true);    
         soundManager.addSound(SoundManager.BGM, sound);
                 
         soundManager.adjustVolume(SoundManager.BGM, 0.5f);
