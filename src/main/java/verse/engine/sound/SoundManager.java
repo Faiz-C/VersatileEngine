@@ -15,8 +15,6 @@ import verse.engine.utils.SoundHandler;
  * @author Faiz Chaudhry
  */
 public class SoundManager {
-
-    // Maybe add more later?
         
     private Map<String, SoundHandler> soundMap;
         

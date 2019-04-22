@@ -11,18 +11,18 @@ import verse.engine.IEngineCog;
 public class InputProcessingCog implements IEngineCog {
 
     private IInputProcessor inputProcessor;
-    private ActionManager currentActionStates;
+    private ActionManager actionManager;
         
     public InputProcessingCog(IInputProcessor inputProcessor) {
         this.inputProcessor = inputProcessor;
     }
 
     public void initTurn(Object... args) {
-        this.currentActionStates = (ActionManager) args[0];
+        this.actionManager = (ActionManager) args[0];
     }
 
     public void turnCog() {
-        this.inputProcessor.processInput(this.currentActionStates);
+        this.inputProcessor.processInput(this.actionManager);
     }
 	
 }
