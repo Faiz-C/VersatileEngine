@@ -1,26 +1,23 @@
-package verse.engine.manualTesting.graphics;
+package verse.engine.manualTesting.tiles;
 
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
-
 import javax.swing.JPanel;
-
 import verse.engine.IEngineCog;
 import verse.engine.graphics.GraphicsCog;
-import verse.engine.graphics.VFrame;
 import verse.engine.utils.ErrorHandler;
 
 @SuppressWarnings("serial")
-public class GraphicsTesting extends JPanel implements Runnable{
+public class TileTestContainer extends JPanel implements Runnable{
         
     private long fps;
     private IEngineCog graphicsCog;
     private BufferedImage gameImage;
     private Thread thread;
 
-    private DrawingGameState state;
-    
-    public GraphicsTesting(long fps, Dimension dimension) {
+    private TileGameState state;
+       
+    public TileTestContainer(long fps, Dimension dimension) {
         super();
                 
         this.setPreferredSize(dimension);
@@ -29,13 +26,13 @@ public class GraphicsTesting extends JPanel implements Runnable{
                 
         this.fps = 1000 / fps;
         this.graphicsCog = new GraphicsCog();
-        this.init();
+        this.init(dimension);
     }
         
     // Setup the Image we use to draw and the graphics we use to draw on it
-    private void init() {
-        this.gameImage = new BufferedImage((int)VFrame.STANDARD.getWidth(), (int)VFrame.STANDARD.getHeight(), BufferedImage.TYPE_INT_RGB);
-        this.state = new DrawingGameState();
+    private void init(Dimension dimension) {
+        this.gameImage = new BufferedImage((int)dimension.getWidth(), (int)dimension.getHeight(), BufferedImage.TYPE_INT_RGB);
+        this.state = new TileGameState(dimension);
     }
         
     @Override
@@ -54,14 +51,14 @@ public class GraphicsTesting extends JPanel implements Runnable{
 
             start = System.nanoTime();
                         
-            this.graphicsCog.initTurn(this, this.gameImage, this.state);
-            this.graphicsCog.turnCog();
+            this.graphicsCog.initTurn(this, this.gameImage, this.state); // Wipe the image and draw onto it again
+            this.graphicsCog.turnCog(); // Draw the image onto the screen
                         
             elapsed = System.nanoTime() - start;
             wait =  this.fps - elapsed / 1000000;
 
             // Wait a bit before looping again
-            if (wait < 0) wait = 10; // We can't wait negative time, fix it to 5 if it happens
+            if (wait < 0) wait = 5; // We can't wait negative time, fix it to 5 if it happens
 
             try{ Thread.sleep(wait); }
             catch(Exception e) { 
@@ -70,5 +67,5 @@ public class GraphicsTesting extends JPanel implements Runnable{
 
         }
     }
-	
+		
 }

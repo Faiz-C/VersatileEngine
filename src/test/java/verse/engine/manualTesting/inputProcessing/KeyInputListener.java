@@ -26,6 +26,7 @@ public class KeyInputListener extends KeyAdapter{
         
     @Override
     public void keyPressed(KeyEvent e) {
+
         // Translate the input first
         String action = this.inputTranslator.translateInput(e.getKeyCode());
         if (action != null && action != this.lastActionTaken) {

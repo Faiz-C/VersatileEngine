@@ -13,6 +13,7 @@ public class TileGameState extends GameState {
     private TileMap tileMap;
      
     public TileGameState(Dimension dimension) {
+        super();
 
         this.tileMapManager = new TileMapManager("src/test/resources/tileSetTest.json", "src/test/resources/tileMapTest.json");
         this.tileMap = this.tileMapManager.getTileMap("Test Map");

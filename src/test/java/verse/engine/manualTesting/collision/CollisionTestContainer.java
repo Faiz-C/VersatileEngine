@@ -15,7 +15,7 @@ import verse.engine.inputProcessing.*;
 import verse.engine.utils.ErrorHandler;
 
 @SuppressWarnings("serial")
-public class CollisionIntegrationTest extends JPanel implements Runnable {        
+public class CollisionTestContainer extends JPanel implements Runnable {        
         
     private long fps;
     private IEngineCog graphicsCog, inputCog;
@@ -26,7 +26,7 @@ public class CollisionIntegrationTest extends JPanel implements Runnable {
     private CollisionGameState state;
     private ActionManager actionManager;
         
-    public CollisionIntegrationTest(long fps, Dimension dimension) {
+    public CollisionTestContainer(long fps, Dimension dimension) {
         super();
                 
         this.setPreferredSize(dimension);

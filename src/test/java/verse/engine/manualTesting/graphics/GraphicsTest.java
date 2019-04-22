@@ -10,7 +10,7 @@ public class GraphicsTest {
         SwingUtilities.invokeLater(new Runnable() {
                         
                 public void run() {
-                    new VFrame("Testing", VFrame.STANDARD, new GraphicsTesting(60, VFrame.STANDARD));
+                    new VFrame("Testing", VFrame.STANDARD, new GraphicsContainer(60, VFrame.STANDARD));
                 }
             });
                 

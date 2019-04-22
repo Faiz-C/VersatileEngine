@@ -24,7 +24,7 @@ import verse.engine.utils.SpriteSheet;
 import verse.engine.utils.SpriteSheetHandler;
 
 @SuppressWarnings("serial")
-public class AnimationIntegrationTest extends JPanel implements Runnable{
+public class AnimationContainer extends JPanel implements Runnable{
         
     private long fps;
     private IEngineCog graphicsCog, updateCog;
@@ -38,7 +38,7 @@ public class AnimationIntegrationTest extends JPanel implements Runnable{
     
     private Animation upMovement, downMovement, leftMovement, rightMovement;
     
-    public AnimationIntegrationTest(long fps, Dimension dimension) {
+    public AnimationContainer(long fps, Dimension dimension) {
         super();
                 
         this.setPreferredSize(dimension);

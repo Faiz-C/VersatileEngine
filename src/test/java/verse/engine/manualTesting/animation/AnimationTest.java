@@ -9,7 +9,7 @@ public class AnimationTest {
          SwingUtilities.invokeLater(new Runnable() {
                         
                 public void run() {
-                    new VFrame("Testing", VFrame.STANDARD, new AnimationIntegrationTest(60, VFrame.STANDARD));
+                    new VFrame("Testing", VFrame.STANDARD, new AnimationContainer(60, VFrame.STANDARD));
                 }
             });
                

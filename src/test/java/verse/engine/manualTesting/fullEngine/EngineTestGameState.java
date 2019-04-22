@@ -1,11 +1,13 @@
 package verse.engine.manualTesting.fullEngine;
 
 import java.awt.Dimension;
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.awt.Graphics2D;
 import java.io.File;
 import javax.imageio.ImageIO;
 
+import verse.engine.manualTesting.collision.*;
 import verse.engine.animation.*;
 import verse.engine.sound.*;
 import verse.engine.utils.*;
@@ -17,8 +19,12 @@ public class EngineTestGameState extends GameState {
 
     private Animation rightMovement;
     private TileMapManager tileMapManager;
+    private TestObject obj1, obj2;
     
     public EngineTestGameState(Dimension dimension) {
+        super();
+        this.obj1 = new TestObject(32, 32, 100, 100);
+        this.obj2 = new TestObject(32, 32, 10, 10);
         this.init(dimension);
     }
 
@@ -54,5 +60,21 @@ public class EngineTestGameState extends GameState {
     public void draw(Graphics2D g, int x, int y) {
         this.tileMapManager.getTileMap("Test Map").draw(g, 0, 0);
         this.rightMovement.draw(g, 60, 400);
+
+        g.setColor(Color.blue);
+        this.obj1.draw(g);
+                
+        g.setColor(Color.white);
+        this.obj2.draw(g);
+         
     }
+
+    public TestObject getTestObject1() {
+        return this.obj1;
+    }
+
+    public TestObject getTestObject2() {
+        return this.obj2;
+    }
+
 }

@@ -11,7 +11,7 @@ public class CollisionTest {
         SwingUtilities.invokeLater(new Runnable() {
                         
                 public void run() {
-                    new VFrame("Testing", VFrame.STANDARD, new CollisionIntegrationTest(60, VFrame.STANDARD));
+                    new VFrame("Testing", VFrame.STANDARD, new CollisionTestContainer(60, VFrame.STANDARD));
                 }
             });
 		

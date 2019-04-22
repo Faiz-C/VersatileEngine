@@ -5,6 +5,9 @@ import javax.swing.JPanel;
 
 import verse.engine.VerseEngine;
 import verse.engine.state.*;
+import verse.engine.inputProcessing.*;
+import verse.engine.manualTesting.collision.*;
+import verse.engine.manualTesting.inputProcessing.*;
 import verse.engine.utils.ErrorHandler;
 
 @SuppressWarnings("serial")
@@ -18,14 +21,27 @@ public class EngineContainer extends JPanel {
         this.setFocusable(true);
         this.requestFocus();
 
-
         // Setup Engine
         VerseEngine engine = VerseEngine.getInstance();
         engine.setFPS(fps);
         engine.setDisplayContainer(this, dimension);
         
+        EngineTestGameState testState = new EngineTestGameState(dimension);
+
+        InputDevice keyboardInput = new InputDevice(new KeyInputTranslator(),
+            new CollisionMovementProcessor(testState.getTestObject2(), testState.getTestObject1()));
+
+        engine.getActionManager().modifyGameAction(KeyInputTranslator.UP, false);
+        engine.getActionManager().modifyGameAction(KeyInputTranslator.DOWN, false);
+        engine.getActionManager().modifyGameAction(KeyInputTranslator.LEFT, false);
+        engine.getActionManager().modifyGameAction(KeyInputTranslator.RIGHT, false);
+
+        engine.addInputDevice("KeyBoard Input", keyboardInput);
+
+        this.addKeyListener(new KeyInputListener(keyboardInput.getInputTranslator(), engine.getActionManager()));
+        
         try {
-            engine.getStateManager().addGameState("Test", new EngineTestGameState(dimension));
+            engine.getStateManager().addGameState("Test", testState);
             engine.getStateManager().swapState("Test");
         }
         catch (Exception e) {

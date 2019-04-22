@@ -25,6 +25,7 @@ public class AnimationGameState extends GameState {
     private Font font;
     
     public AnimationGameState(Dimension dimension, Graphics2D g) {
+        super();
         this.init(dimension, g);
     }
 
