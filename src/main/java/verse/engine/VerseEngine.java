@@ -15,7 +15,15 @@ import verse.engine.graphics.*;
 import verse.engine.updatable.*;
 import verse.engine.utils.*;
 
-// Want three main accessible componenents. One for updating, graphics, and input
+/**
+ * The core engine itself. The VerseEngine holds all components needed to deal with the underlying game engine for 2D games. 
+ * The VerseEngine is restricted to a singleton and should be run in its own thread to avoid conflicts with the main thread
+ * launching the game. The VerseEngine deals with input, rendering, and updating the game through the PREDEFINED components
+ * for each respectively. The engine is very straight foward and is extensible, allowing for others to add components of their
+ * own (SOON TO COME).
+ *
+ * @author Faiz Chaudhry
+ */
 public class VerseEngine implements Runnable, IObserver{ 
     
     // Static instance for singleton
@@ -39,7 +47,7 @@ public class VerseEngine implements Runnable, IObserver{
     // GameStateManager for both rendering and updating
     private GameStateManager stateManager;
 
-    // Sound
+    // Components needed for sound
     private SoundManager soundManager;
 
     private VerseEngine() {
@@ -57,40 +65,80 @@ public class VerseEngine implements Runnable, IObserver{
     public void update(Object... args) {
         this.updatingCog.initTurn(this.stateManager.getCurrentState());
     }
-    
+
+    /**
+     * @return The SoundManager instance the engine is using to handle playing/pausing/stoping sounds within the game.
+     */
     public SoundManager getSoundManager() {
         return this.soundManager;
     }
-
+    
+    /**
+     * @return The GameStateManager instance the engine is using to handle the actual states of the game.
+     */
     public GameStateManager getStateManager() {
         return this.stateManager;
     }
 
+    /**
+     * @return The ActionManager instance the engine is using to keep track of what actions are happening with the game.
+     */
     public ActionManager getActionManager() {
         return this.actionManager;
     }
 
+    /**
+     * Sets the FPS of the game to the given fps.
+     *
+     * @param fps -> The desired fps for the engine to run the game at 
+     */
     public void setFPS(long fps) {
         this.fps = fps;
     }
-
+    
+    /**
+     * Adds the given InputDevice to the engine under the given name for the engine to listen for.
+     *
+     * @param name -> A String to refer to the given InputDevice by. 
+     * @param inputDevice -> The InputDevice wanting to be added for the engine to listen for
+     */ 
     public void addInputDevice(String name, InputDevice inputDevice) {
         this.inputCogs.put(name, new InputProcessingCog(inputDevice.getInputProcessor()));
     }
 
+    
+    /**
+     * Removes the InputDevice associated with the given name from those the engine listens for.
+     *
+     * @param name -> The String associated with the InputDevice wanting to be removed. 
+     */ 
     public void removeInputDevice(String name) {
         this.inputCogs.remove(name);
     }
 
+    
+    /**
+     * Sets the container which the game is seen through (is displayed to). 
+     *
+     * @param display -> The actual Container instance wanting to be used to display the game.
+     * @param dimension -> The Dimension of the given Container (width and height of the Container) 
+     */ 
     public void setDisplayContainer(Container display, Dimension dimension) {
         this.display = display;
         this.displayImage = new BufferedImage((int)dimension.getWidth(), (int)dimension.getHeight(), BufferedImage.TYPE_INT_RGB);
     }
 
+    
+    /**
+     * @return The Container the engine is currently using to display the game. 
+     */ 
     public Container getDisplayContainer() {
         return this.display;
     }
 
+    /**
+     * @return The current instance of the VerseEngine
+     */
     public static synchronized VerseEngine getInstance() {
         if (instance == null) {
             instance = new VerseEngine();
@@ -126,6 +174,7 @@ public class VerseEngine implements Runnable, IObserver{
 
             if (wait < 0) wait = 10;
 
+            // Wait our calculated time until the next game loop
             try {
                 Thread.sleep(wait);
             }
