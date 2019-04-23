@@ -11,7 +11,9 @@ to get straight to developing the game have a better time, all while allowing fo
 
 # To Do
 -- Add more unit testing
+
 -- Add more exception handling
+
 -- Add way more documentation to help with usage
 
 # Additional Information
