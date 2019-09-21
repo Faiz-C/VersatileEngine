@@ -37,14 +37,13 @@ public abstract class Animation implements IUpdatable, IObserver{
      * beginning if we are looping still (or infinitely if we want infinite loops).
      */
     private void animate() {
+
+        if (this.loopCount == 0) return;
+
         // Loops the Animation if need be
         if (this.currentAnimationPosition >= this.maxAnimationPosition - 1) {	
-            if (this.loopCount == Animation.INFINITE_LOOP) {
-                this.currentAnimationPosition = 0;
-            } else if (this.loopCount > 0) {
-                this.loopCount--;
-            }
-
+            this.loopCount--;
+            this.currentAnimationPosition = 0;
         } else {
             this.currentAnimationPosition++;
         }

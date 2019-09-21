@@ -14,6 +14,7 @@ import verse.engine.utils.*;
 import verse.engine.tiles.*;
 import verse.engine.state.GameState;
 import verse.engine.VerseEngine;
+import verse.engine.utils.SpriteSheetHandler;
 
 public class EngineTestGameState extends GameState {
 
@@ -35,7 +36,7 @@ public class EngineTestGameState extends GameState {
             SpriteSheetHandler handler = new SpriteSheetHandler();
             
             handler.setSpriteSheet(new SpriteSheet(spriteSheet, 32, 32));			
-            this.rightMovement = new SpriteAnimation(handler.cropRow(1), Animation.STANDARD_DELAY, Animation.INFINITE_LOOP);
+            this.rightMovement = new SpriteAnimation(handler.cropRow(1), Animation.STANDARD_DELAY, 10);
 			
             this.addUpdatableAspect(this.rightMovement);
             
